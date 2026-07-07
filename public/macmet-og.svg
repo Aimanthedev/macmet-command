@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070A0F"/>
+      <stop offset="1" stop-color="#141D2B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2F80FF"/>
+      <stop offset="1" stop-color="#675CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    <path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200"/>
+    <path d="M100 0V630M300 0V630M500 0V630M700 0V630M900 0V630M1100 0V630"/>
+  </g>
+  <g transform="translate(100,220)">
+    <rect width="96" height="96" rx="22" fill="#0A0F16" stroke="url(#accent)" stroke-width="2"/>
+    <path d="M20 76 V28 L38 52 L58 28 L76 52" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-4)"/>
+  </g>
+  <text x="230" y="280" fill="#F4F7FB" font-family="Inter, sans-serif" font-size="72" font-weight="800">Macmet Command Center</text>
+  <text x="230" y="340" fill="#9BA8BA" font-family="Inter, sans-serif" font-size="32" font-weight="500">Operations Intelligence Platform · Doha, Qatar</text>
+  <text x="230" y="400" fill="#2F80FF" font-family="Inter, sans-serif" font-size="22" font-weight="600" letter-spacing="4">MACMET AL-KHALEEJ CONSTRUCTIONS</text>
+</svg>
