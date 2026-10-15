@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { PageHeader, Panel, KpiCard, StatusBadge, SectionTitle } from "@/components/shared/Primitives";
 import { observations, safetyTrend, projects } from "@/data/mock";
@@ -6,12 +7,12 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 const RISK = [
-  { p: "MAK-2411", PPE: 1, "Height": 0, "Electrical": 0, "Hot work": 1, "Housekeeping": 2 },
-  { p: "MAK-2409", PPE: 0, "Height": 1, "Electrical": 2, "Hot work": 0, "Housekeeping": 1 },
-  { p: "MAK-2418", PPE: 0, "Height": 0, "Electrical": 0, "Hot work": 0, "Housekeeping": 1 },
-  { p: "MAK-2402", PPE: 1, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
-  { p: "MAK-2420", PPE: 2, "Height": 3, "Electrical": 0, "Hot work": 1, "Housekeeping": 1 },
-  { p: "MAK-2419", PPE: 0, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
+  { p: "GHT-2411", PPE: 1, "Height": 0, "Electrical": 0, "Hot work": 1, "Housekeeping": 2 },
+  { p: "GHT-2409", PPE: 0, "Height": 1, "Electrical": 2, "Hot work": 0, "Housekeeping": 1 },
+  { p: "GHT-2418", PPE: 0, "Height": 0, "Electrical": 0, "Hot work": 0, "Housekeeping": 1 },
+  { p: "GHT-2402", PPE: 1, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
+  { p: "GHT-2420", PPE: 2, "Height": 3, "Electrical": 0, "Hot work": 1, "Housekeeping": 1 },
+  { p: "GHT-2419", PPE: 0, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
 ];
 const CATS = ["PPE", "Height", "Electrical", "Hot work", "Housekeeping"];
 const heat = (v: number) => v >= 3 ? "bg-rose-500/70" : v === 2 ? "bg-amber-500/60" : v === 1 ? "bg-primary/40" : "bg-muted/60";
@@ -82,10 +83,10 @@ export default function HsePage() {
           <div className="text-[10px] text-muted-foreground grid gap-1" style={{ gridTemplateColumns: "60px repeat(5,1fr)" }}>
             <div></div>{CATS.map((c) => <div key={c} className="text-center">{c}</div>)}
             {RISK.map((r) => (
-              <>
-                <div key={r.p} className="text-[10px] font-medium py-1">{r.p}</div>
+              <Fragment key={r.p}>
+                <div className="text-[10px] font-medium py-1">{r.p}</div>
                 {CATS.map((c) => <div key={r.p + c} className={cn("h-8 rounded", heat((r as any)[c]))} title={`${(r as any)[c]}`} />)}
-              </>
+              </Fragment>
             ))}
           </div>
         </Panel>

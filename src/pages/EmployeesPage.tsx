@@ -14,7 +14,7 @@ export default function EmployeesPage() {
 
   return (
     <div>
-      <PageHeader title="Employees" subtitle="Directory, allocation, leave and compliance for Macmet workforce."
+      <PageHeader title="Employees" subtitle="Directory, allocation, leave and compliance for Green House Technology workforce."
         actions={<button onClick={() => toast.success("Employee record created")} className="h-9 inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-3 text-sm"><Plus className="h-4 w-4" /> Add employee</button>} />
 
       <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">

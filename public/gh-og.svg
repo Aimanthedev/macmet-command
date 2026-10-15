@@ -18,7 +18,7 @@
     <rect width="96" height="96" rx="22" fill="#0A0F16" stroke="url(#accent)" stroke-width="2"/>
     <path d="M20 76 V28 L38 52 L58 28 L76 52" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-4)"/>
   </g>
-  <text x="230" y="280" fill="#F4F7FB" font-family="Inter, sans-serif" font-size="72" font-weight="800">Macmet Command Center</text>
-  <text x="230" y="340" fill="#9BA8BA" font-family="Inter, sans-serif" font-size="32" font-weight="500">Operations Intelligence Platform · Doha, Qatar</text>
-  <text x="230" y="400" fill="#2F80FF" font-family="Inter, sans-serif" font-size="22" font-weight="600" letter-spacing="4">MACMET AL-KHALEEJ CONSTRUCTIONS</text>
+  <text x="230" y="272" fill="#F4F7FB" font-family="Inter, sans-serif" font-size="60" font-weight="800">Green House Technology</text>
+  <text x="230" y="330" fill="#9BA8BA" font-family="Inter, sans-serif" font-size="28" font-weight="500">Command Center · Operations Intelligence Platform</text>
+  <text x="230" y="390" fill="#2F80FF" font-family="Inter, sans-serif" font-size="20" font-weight="600" letter-spacing="4">DOHA, QATAR</text>
 </svg>

@@ -26,7 +26,7 @@ export function Topbar() {
   const nav = useNavigate();
   const clock = useQatarClock();
   const unread = notifications.filter((n) => !n.read).length;
-  const label = Object.entries(routeMap).find(([p]) => pathname.startsWith(p))?.[1] ?? "Macmet";
+  const label = Object.entries(routeMap).find(([p]) => pathname.startsWith(p))?.[1] ?? "Green House Technology";
 
   return (
     <header className="sticky top-0 z-30 h-16 border-b border-border bg-background/70 backdrop-blur-xl">
@@ -39,17 +39,17 @@ export function Topbar() {
           <Menu className="h-4 w-4" />
         </button>
 
-        <nav className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground min-w-0">
-          <button onClick={() => nav("/dashboard")} className="hover:text-foreground truncate">Macmet</button>
-          <span className="opacity-40">/</span>
-          <span className="text-foreground font-medium truncate">{label}</span>
+        <nav className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground shrink-0">
+          <button onClick={() => nav("/dashboard")} className="hidden md:inline hover:text-foreground whitespace-nowrap">Green House Technology</button>
+          <span className="hidden lg:inline opacity-40">/</span>
+          <span className="hidden lg:inline text-foreground font-medium whitespace-nowrap">{label}</span>
         </nav>
 
         <div className="flex-1" />
 
         <button
           onClick={() => setCommandOpen(true)}
-          className="hidden md:flex items-center gap-2 w-[320px] lg:w-[400px] rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-muted-foreground hover:bg-muted transition"
+          className="hidden xl:flex items-center gap-2 w-[400px] min-w-[160px] rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-muted-foreground hover:bg-muted transition"
         >
           <Search className="h-4 w-4" />
           <span className="flex-1 text-left truncate">Search projects, employees, documents…</span>
@@ -59,16 +59,16 @@ export function Topbar() {
         <button
           onClick={() => setCommandOpen(true)}
           aria-label="Search"
-          className="md:hidden grid h-9 w-9 place-items-center rounded-lg border border-border hover:bg-accent"
+          className="xl:hidden grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-border hover:bg-accent"
         ><Search className="h-4 w-4" /></button>
 
-        <div className="hidden lg:flex items-center gap-2 px-3 h-9 rounded-lg border border-border bg-muted/30 text-xs tabular text-muted-foreground">
+        <div className="hidden xl:flex shrink-0 items-center gap-2 px-3 h-9 rounded-lg border border-border bg-muted/30 text-xs tabular text-muted-foreground">
           {clock}
         </div>
 
         <button
           onClick={() => setLang(lang === "en" ? "ar" : "en")}
-          className="grid h-9 w-9 place-items-center rounded-lg border border-border hover:bg-accent"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-border hover:bg-accent"
           aria-label="Toggle language"
           title={lang === "en" ? "العربية" : "English"}
         >
@@ -77,7 +77,7 @@ export function Topbar() {
 
         <button
           onClick={toggleTheme}
-          className="grid h-9 w-9 place-items-center rounded-lg border border-border hover:bg-accent"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-border hover:bg-accent"
           aria-label="Toggle theme"
         >
           {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -85,7 +85,7 @@ export function Topbar() {
 
         <button
           onClick={() => setNotificationsOpen(true)}
-          className="relative grid h-9 w-9 place-items-center rounded-lg border border-border hover:bg-accent"
+          className="relative grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-border hover:bg-accent"
           aria-label="Notifications"
         >
           <Bell className="h-4 w-4" />
@@ -96,7 +96,7 @@ export function Topbar() {
           )}
         </button>
 
-        <div className="flex items-center gap-2 pl-2 border-l border-border ml-1">
+        <div className="hidden lg:flex shrink-0 items-center gap-2 pl-2 border-l border-border ml-1">
           <Avatar name="Mohammed Al-Khaleej" size={32} />
           <div className="hidden xl:block leading-tight">
             <div className="text-xs font-semibold">Mohammed Al-Khaleej</div>
