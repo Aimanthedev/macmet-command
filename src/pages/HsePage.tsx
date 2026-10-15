@@ -6,12 +6,12 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 const RISK = [
-  { p: "MAK-2411", PPE: 1, "Height": 0, "Electrical": 0, "Hot work": 1, "Housekeeping": 2 },
-  { p: "MAK-2409", PPE: 0, "Height": 1, "Electrical": 2, "Hot work": 0, "Housekeeping": 1 },
-  { p: "MAK-2418", PPE: 0, "Height": 0, "Electrical": 0, "Hot work": 0, "Housekeeping": 1 },
-  { p: "MAK-2402", PPE: 1, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
-  { p: "MAK-2420", PPE: 2, "Height": 3, "Electrical": 0, "Hot work": 1, "Housekeeping": 1 },
-  { p: "MAK-2419", PPE: 0, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
+  { p: "GHT-2411", PPE: 1, "Height": 0, "Electrical": 0, "Hot work": 1, "Housekeeping": 2 },
+  { p: "GHT-2409", PPE: 0, "Height": 1, "Electrical": 2, "Hot work": 0, "Housekeeping": 1 },
+  { p: "GHT-2418", PPE: 0, "Height": 0, "Electrical": 0, "Hot work": 0, "Housekeeping": 1 },
+  { p: "GHT-2402", PPE: 1, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
+  { p: "GHT-2420", PPE: 2, "Height": 3, "Electrical": 0, "Hot work": 1, "Housekeeping": 1 },
+  { p: "GHT-2419", PPE: 0, "Height": 1, "Electrical": 1, "Hot work": 2, "Housekeeping": 0 },
 ];
 const CATS = ["PPE", "Height", "Electrical", "Hot work", "Housekeeping"];
 const heat = (v: number) => v >= 3 ? "bg-rose-500/70" : v === 2 ? "bg-amber-500/60" : v === 1 ? "bg-primary/40" : "bg-muted/60";

@@ -214,11 +214,11 @@ export default function DashboardPage() {
           <SectionTitle title="Upcoming milestones" />
           <ol className="relative border-l border-border pl-4 space-y-4">
             {[
-              { d: "18 Jul", t: "HVAC first fix inspection", p: "MAK-2411" },
-              { d: "22 Jul", t: "MV switchgear delivery", p: "MAK-2409" },
-              { d: "25 Jul", t: "Cable tray routing sign-off", p: "MAK-2402" },
-              { d: "28 Jul", t: "Transformer pad handover", p: "MAK-2419" },
-              { d: "30 Jul", t: "Foundation pour Block C", p: "MAK-2420" },
+              { d: "18 Jul", t: "HVAC first fix inspection", p: "GHT-2411" },
+              { d: "22 Jul", t: "MV switchgear delivery", p: "GHT-2409" },
+              { d: "25 Jul", t: "Cable tray routing sign-off", p: "GHT-2402" },
+              { d: "28 Jul", t: "Transformer pad handover", p: "GHT-2419" },
+              { d: "30 Jul", t: "Foundation pour Block C", p: "GHT-2420" },
             ].map((m, i) => (
               <li key={i} className="relative">
                 <span className="absolute -left-[19px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-primary/20" />

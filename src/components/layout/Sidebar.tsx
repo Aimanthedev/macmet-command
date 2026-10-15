@@ -50,7 +50,7 @@ export function Sidebar({ mobile = false }: { mobile?: boolean }) {
         {!collapsed && (
           <div className="min-w-0">
             <div className="font-display text-sm font-bold leading-tight">GREEN HOUSE TECHNOLOGY</div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">MAK · Command Center</div>
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">GHT · Command Center</div>
           </div>
         )}
       </div>

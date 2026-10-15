@@ -36,7 +36,7 @@ function AddProjectModal({ onClose }: { onClose: () => void }) {
         <div className="p-5 grid grid-cols-2 gap-3 text-sm">
           {[
             ["name", "Project name", ""],
-            ["code", "Project code", "MAK-2500"],
+            ["code", "Project code", "GHT-2500"],
             ["client", "Client", ""],
             ["location", "Location", ""],
             ["value", "Contract value (QAR)", ""],

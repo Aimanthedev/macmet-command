@@ -84,7 +84,7 @@ export default function DocumentsPage() {
             <div className="mt-3 flex justify-end gap-2">
               <button onClick={() => setUpload(false)} className="h-9 px-3 rounded-lg border border-border text-sm">Cancel</button>
               <button onClick={() => {
-                const d: Doc = { id: `d${Date.now()}`, number: `DOC-${Math.floor(Math.random() * 9000 + 1000)}`, name: "New uploaded document", category: "Drawings", project: "MAK-2411", revision: "A", owner: "You", updated: new Date().toISOString().slice(0, 10), status: "Draft" };
+                const d: Doc = { id: `d${Date.now()}`, number: `DOC-${Math.floor(Math.random() * 9000 + 1000)}`, name: "New uploaded document", category: "Drawings", project: "GHT-2411", revision: "A", owner: "You", updated: new Date().toISOString().slice(0, 10), status: "Draft" };
                 setItems([d, ...items]); toast.success("Document uploaded"); setUpload(false);
               }} className="h-9 px-3 rounded-lg bg-primary text-primary-foreground text-sm">Upload</button>
             </div>
