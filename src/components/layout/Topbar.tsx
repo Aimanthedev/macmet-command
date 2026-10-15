@@ -39,10 +39,10 @@ export function Topbar() {
           <Menu className="h-4 w-4" />
         </button>
 
-        <nav className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground min-w-0">
-          <button onClick={() => nav("/dashboard")} className="hover:text-foreground truncate">Green House Technology</button>
+        <nav className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground shrink-0">
+          <button onClick={() => nav("/dashboard")} className="hover:text-foreground whitespace-nowrap">Green House Technology</button>
           <span className="opacity-40">/</span>
-          <span className="text-foreground font-medium truncate">{label}</span>
+          <span className="text-foreground font-medium whitespace-nowrap">{label}</span>
         </nav>
 
         <div className="flex-1" />
