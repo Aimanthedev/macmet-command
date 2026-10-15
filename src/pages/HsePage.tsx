@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { PageHeader, Panel, KpiCard, StatusBadge, SectionTitle } from "@/components/shared/Primitives";
 import { observations, safetyTrend, projects } from "@/data/mock";
@@ -82,10 +83,10 @@ export default function HsePage() {
           <div className="text-[10px] text-muted-foreground grid gap-1" style={{ gridTemplateColumns: "60px repeat(5,1fr)" }}>
             <div></div>{CATS.map((c) => <div key={c} className="text-center">{c}</div>)}
             {RISK.map((r) => (
-              <>
-                <div key={r.p} className="text-[10px] font-medium py-1">{r.p}</div>
+              <Fragment key={r.p}>
+                <div className="text-[10px] font-medium py-1">{r.p}</div>
                 {CATS.map((c) => <div key={r.p + c} className={cn("h-8 rounded", heat((r as any)[c]))} title={`${(r as any)[c]}`} />)}
-              </>
+              </Fragment>
             ))}
           </div>
         </Panel>
