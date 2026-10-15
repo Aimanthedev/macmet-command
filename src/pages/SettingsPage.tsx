@@ -8,13 +8,13 @@ const ROLES = ["Managing Director", "Operations Manager", "Finance Manager", "HR
 export default function SettingsPage() {
   const { theme, toggleTheme, lang, setLang, density, setDensity, reducedMotion, setReducedMotion, accent, setAccent, role, setRole } = useApp();
   const [company, setCompany] = useState({
-    name: "Macmet Al-Khaleej Constructions",
+    name: "Green House Technology",
     address: "C Ring Road, Doha, Qatar",
     po: "P.O. Box 63073",
     phone: "+974 4451 7976",
-    email: "info@macmet.qa",
-    sales: "sales@macmet.qa",
-    web: "macmet.qa",
+    email: "info@greenhousetechnology.qa",
+    sales: "sales@greenhousetechnology.qa",
+    web: "greenhousetechnology.qa",
   });
 
   const confirmAndDo = (msg: string, cb: () => void) => { if (window.confirm(msg)) cb(); };

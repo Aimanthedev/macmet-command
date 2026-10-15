@@ -60,7 +60,7 @@ export default function ReportsPage() {
 
         {preview && (
           <div className="mt-6 p-6 rounded-xl border border-border bg-muted/20 print:bg-white print:text-black">
-            <div className="border-b border-border pb-4 mb-4"><div className="text-xs text-muted-foreground">MACMET AL-KHALEEJ · Report preview</div><div className="font-display text-xl font-bold">{form.type}</div><div className="text-xs">{form.from} → {form.to} · Grouped by {form.grouping}</div></div>
+            <div className="border-b border-border pb-4 mb-4"><div className="text-xs text-muted-foreground">GREEN HOUSE TECHNOLOGY · Report preview</div><div className="font-display text-xl font-bold">{form.type}</div><div className="text-xs">{form.from} → {form.to} · Grouped by {form.grouping}</div></div>
             <table className="w-full text-sm">
               <thead className="text-xs text-muted-foreground"><tr><th className="text-left py-2">Project</th><th className="text-left">Client</th><th className="text-right">Value</th><th className="text-right">Progress</th></tr></thead>
               <tbody>{projects.slice(0, 6).map((p) => (

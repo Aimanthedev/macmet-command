@@ -49,7 +49,7 @@ export function Sidebar({ mobile = false }: { mobile?: boolean }) {
         <BrandMark size={36} />
         {!collapsed && (
           <div className="min-w-0">
-            <div className="font-display text-sm font-bold leading-tight">MACMET AL-KHALEEJ</div>
+            <div className="font-display text-sm font-bold leading-tight">GREEN HOUSE TECHNOLOGY</div>
             <div className="text-[10px] uppercase tracking-widest text-muted-foreground">MAK · Command Center</div>
           </div>
         )}

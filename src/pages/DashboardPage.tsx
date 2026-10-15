@@ -51,7 +51,7 @@ export default function DashboardPage() {
     <div>
       <PageHeader
         title="Good morning, Mohammed"
-        subtitle="Here is today’s operating position across Macmet. Demo environment · Fictional operational data."
+        subtitle="Here is today’s operating position across Green House Technology. Demo environment · Fictional operational data."
         actions={
           <>
             <select className="h-9 rounded-lg border border-border bg-background px-3 text-xs">

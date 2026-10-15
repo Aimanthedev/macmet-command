@@ -26,7 +26,7 @@ export function Topbar() {
   const nav = useNavigate();
   const clock = useQatarClock();
   const unread = notifications.filter((n) => !n.read).length;
-  const label = Object.entries(routeMap).find(([p]) => pathname.startsWith(p))?.[1] ?? "Macmet";
+  const label = Object.entries(routeMap).find(([p]) => pathname.startsWith(p))?.[1] ?? "Green House Technology";
 
   return (
     <header className="sticky top-0 z-30 h-16 border-b border-border bg-background/70 backdrop-blur-xl">
@@ -40,7 +40,7 @@ export function Topbar() {
         </button>
 
         <nav className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground min-w-0">
-          <button onClick={() => nav("/dashboard")} className="hover:text-foreground truncate">Macmet</button>
+          <button onClick={() => nav("/dashboard")} className="hover:text-foreground truncate">Green House Technology</button>
           <span className="opacity-40">/</span>
           <span className="text-foreground font-medium truncate">{label}</span>
         </nav>
