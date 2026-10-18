@@ -1,9 +1,12 @@
-import { Bell, Command, Globe, Menu, Moon, Search, Sun } from "lucide-react";
+import { Bell, Command, Globe, LogOut, Menu, Moon, Search, Sun, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useApp } from "@/context/AppContext";
 import { cn } from "@/lib/utils";
 import { Avatar } from "@/components/shared/Primitives";
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+import { endDemoSession } from "@/lib/demo-session";
 
 const routeMap: Record<string, string> = {
   "/dashboard": "Overview", "/projects": "Projects", "/approvals": "Tasks & Approvals",
@@ -33,23 +36,23 @@ export function Topbar() {
       <div className="h-full px-4 sm:px-6 flex items-center gap-3">
         <button
           onClick={() => setSidebarOpen(true)}
-          className="md:hidden grid h-9 w-9 place-items-center rounded-lg border border-border hover:bg-accent"
+          className="lg:hidden shrink-0 grid h-9 w-9 place-items-center rounded-lg border border-border hover:bg-accent"
           aria-label="Open menu"
         >
           <Menu className="h-4 w-4" />
         </button>
 
-        <nav className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground shrink-0">
+        <nav className="hidden sm:flex min-w-0 items-center gap-2 text-sm text-muted-foreground">
           <button onClick={() => nav("/dashboard")} className="hidden md:inline hover:text-foreground whitespace-nowrap">Green House Technology</button>
           <span className="hidden lg:inline opacity-40">/</span>
-          <span className="hidden lg:inline text-foreground font-medium whitespace-nowrap">{label}</span>
+          <span className="hidden 2xl:inline text-foreground font-medium whitespace-nowrap">{label}</span>
         </nav>
 
         <div className="flex-1" />
 
         <button
           onClick={() => setCommandOpen(true)}
-          className="hidden xl:flex items-center gap-2 w-[400px] min-w-[160px] rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-muted-foreground hover:bg-muted transition"
+          className="hidden 2xl:flex items-center gap-2 w-[260px] min-w-0 shrink rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-muted-foreground hover:bg-muted transition"
         >
           <Search className="h-4 w-4" />
           <span className="flex-1 text-left truncate">Search projects, employees, documents…</span>
@@ -59,7 +62,7 @@ export function Topbar() {
         <button
           onClick={() => setCommandOpen(true)}
           aria-label="Search"
-          className="xl:hidden grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-border hover:bg-accent"
+          className="2xl:hidden grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-border hover:bg-accent"
         ><Search className="h-4 w-4" /></button>
 
         <div className="hidden xl:flex shrink-0 items-center gap-2 px-3 h-9 rounded-lg border border-border bg-muted/30 text-xs tabular text-muted-foreground">
@@ -96,13 +99,7 @@ export function Topbar() {
           )}
         </button>
 
-        <div className="hidden lg:flex shrink-0 items-center gap-2 pl-2 border-l border-border ml-1">
-          <Avatar name="Mohammed Al-Khaleej" size={32} />
-          <div className="hidden xl:block leading-tight">
-            <div className="text-xs font-semibold">Mohammed Al-Khaleej</div>
-            <div className="text-[10px] text-muted-foreground">Managing Director</div>
-          </div>
-        </div>
+        <DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" size="icon" aria-label="Profile menu" className="shrink-0"><Avatar name="Mohammed Al-Khaleej" size={30} /></Button></DropdownMenuTrigger><DropdownMenuContent align="end"><DropdownMenuLabel>Mohammed Al-Khaleej</DropdownMenuLabel><DropdownMenuSeparator /><DropdownMenuItem onClick={() => nav("/settings")}><User className="h-4 w-4 mr-2" />Profile & settings</DropdownMenuItem><DropdownMenuItem onClick={() => { endDemoSession(); nav("/login", { replace: true }); }}><LogOut className="h-4 w-4 mr-2" />Logout</DropdownMenuItem></DropdownMenuContent></DropdownMenu>
       </div>
     </header>
   );

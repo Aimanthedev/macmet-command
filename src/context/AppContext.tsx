@@ -69,7 +69,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const readState = readLS<Record<string, boolean>>("mak_notif_read", {});
     return initialNotifications.map((n) => ({ ...n, read: readState[n.id] ?? n.read }));
   });
-  const [projects, setProjects] = useState<Project[]>(initialProjects);
+  const [projects, setProjects] = useState<Project[]>(() => readLS("ght_projects", initialProjects));
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
   const [approvals, setApprovals] = useState<Approval[]>(initialApprovals);
   const [commandOpen, setCommandOpen] = useState(false);
@@ -91,6 +91,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => { writeLS("mak_density", density); }, [density]);
   useEffect(() => { writeLS("mak_reduced_motion", reducedMotion); }, [reducedMotion]);
   useEffect(() => { writeLS("mak_accent", accent); }, [accent]);
+  useEffect(() => { writeLS("ght_projects", projects); }, [projects]);
 
   const toggleTheme = useCallback(() => setTheme((t) => (t === "dark" ? "light" : "dark")), []);
   const setLang = useCallback((l: Lang) => setLangS(l), []);

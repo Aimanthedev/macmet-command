@@ -16,13 +16,15 @@ import DocumentsPage from "@/pages/DocumentsPage";
 import ReportsPage from "@/pages/ReportsPage";
 import SettingsPage from "@/pages/SettingsPage";
 import NotFoundPage from "@/pages/NotFoundPage";
+import LoginPage, { DemoGuard } from "@/pages/LoginPage";
 
 export default function App() {
   return (
     <AppProvider>
       <HashRouter>
         <Routes>
-          <Route element={<AppShell />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route element={<DemoGuard><AppShell /></DemoGuard>}>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
