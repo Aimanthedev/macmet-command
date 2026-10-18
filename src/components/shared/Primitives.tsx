@@ -6,7 +6,7 @@ import { ArrowDownRight, ArrowUpRight, Minus } from "lucide-react";
 export function Panel({ className, children, gradient }: { className?: string; children: ReactNode; gradient?: boolean }) {
   return (
     <div className={cn(
-      "panel relative overflow-hidden",
+      "panel relative min-w-0 overflow-hidden",
       gradient && "before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary/8 before:via-transparent before:to-transparent before:pointer-events-none",
       className,
     )}>
@@ -19,7 +19,7 @@ export function PageHeader({ title, subtitle, actions }: { title: string; subtit
   return (
     <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
       <div className="min-w-0">
-        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground truncate">{title}</h1>
+        <h1 className="font-display text-2xl sm:text-3xl font-bold text-foreground break-words">{title}</h1>
         {subtitle && <p className="mt-1 text-sm text-muted-foreground max-w-2xl">{subtitle}</p>}
       </div>
       {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
@@ -82,14 +82,11 @@ export function KpiCard({ label, value, trend, trendDir = "up", icon, spark }: {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
       whileHover={{ y: -2 }}
+      className="min-w-0 h-full"
     >
       <Panel className="p-5 h-full">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
-            <div className="mt-2 font-display text-3xl font-bold tabular text-foreground">{value}</div>
-            {trend && <div className="mt-1"><TrendBadge text={trend} dir={trendDir} /></div>}
-          </div>
+        <div className="flex items-start justify-between gap-3 min-h-10">
+          <div className="text-xs uppercase tracking-wider text-muted-foreground min-w-0">{label}</div>
           {icon && (
             <div className="shrink-0 grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
               {icon}
@@ -116,10 +113,12 @@ export function EmptyState({ title, hint }: { title: string; hint?: string }) {
 
 export function SectionTitle({ title, action }: { title: string; action?: ReactNode }) {
   return (
-    <div className="flex items-center justify-between mb-3">
+    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
       <h3 className="text-sm font-semibold text-foreground tracking-tight">{title}</h3>
       {action}
     </div>
+        <div className="mt-2 font-display text-[28px] font-bold tabular text-foreground whitespace-nowrap">{value}</div>
+        {trend && <div className="mt-1"><TrendBadge text={trend} dir={trendDir} /></div>}
   );
 }
 

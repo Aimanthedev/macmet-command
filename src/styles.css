@@ -152,6 +152,28 @@
   border-radius: var(--radius);
 }
 
+/* Grids respond to usable content width, including the open sidebar. */
+.kpi-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
+.workspace-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; }
+.workspace-input { width: 100%; min-width: 0; height: 44px; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-background); padding: 8px 12px; font-size: 14px; color: var(--color-foreground); }
+.workspace-input:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+textarea.workspace-input { height: auto; min-height: 88px; }
+.login-page { background: var(--color-background); background-image: radial-gradient(ellipse at 50% 0%, color-mix(in oklch, var(--color-primary) 12%, transparent), transparent 60%); }
+main { container-type: inline-size; }
+main .grid > *, main .flex > * { min-width: 0; }
+main .panel:has(> table) { overflow-x: auto; }
+main table { min-width: 640px; }
+main input, main select, main textarea { max-width: 100%; }
+main .recharts-wrapper { max-width: 100%; }
+@container (min-width: 520px) { .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container (min-width: 840px) { .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@container (min-width: 1540px) { .kpi-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  main .grid.grid-cols-2:has(> div > .panel), main .grid.grid-cols-2:has(> .panel) { grid-template-columns: minmax(0, 1fr); }
+  main .panel { max-width: 100%; }
+  main [class*="min-w-[220px]"] { min-width: 0; flex-basis: 100%; }
+}
+
 @utility grid-bg {
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),

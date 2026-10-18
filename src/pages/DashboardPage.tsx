@@ -69,7 +69,7 @@ export default function DashboardPage() {
         }
       />
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         {kpis.map((k) => <KpiCard key={k.label} {...k} />)}
       </div>
 
