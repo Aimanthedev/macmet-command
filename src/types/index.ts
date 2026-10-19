@@ -14,6 +14,8 @@ export interface Project {
   progress: number;
   budgetUsed: number;
   contractValue: number;
+  projectType?: string;
+  plannedProgress?: number;
   startDate: string;
   endDate: string;
   manager: string;
