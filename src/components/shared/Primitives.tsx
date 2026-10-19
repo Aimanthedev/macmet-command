@@ -93,6 +93,8 @@ export function KpiCard({ label, value, trend, trendDir = "up", icon, spark }: {
             </div>
           )}
         </div>
+        <div className="mt-2 font-display text-[28px] font-bold tabular text-foreground whitespace-nowrap">{value}</div>
+        {trend && <div className="mt-1"><TrendBadge text={trend} dir={trendDir} /></div>}
         {spark && <div className="mt-3"><Sparkline data={spark} positive={trendDir !== "down"} /></div>}
       </Panel>
     </motion.div>
@@ -117,8 +119,6 @@ export function SectionTitle({ title, action }: { title: string; action?: ReactN
       <h3 className="text-sm font-semibold text-foreground tracking-tight">{title}</h3>
       {action}
     </div>
-        <div className="mt-2 font-display text-[28px] font-bold tabular text-foreground whitespace-nowrap">{value}</div>
-        {trend && <div className="mt-1"><TrendBadge text={trend} dir={trendDir} /></div>}
   );
 }
 
