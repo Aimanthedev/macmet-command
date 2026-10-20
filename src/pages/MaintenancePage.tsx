@@ -17,7 +17,7 @@ export default function MaintenancePage() {
     <div>
       <PageHeader title="Maintenance & Work Orders" subtitle="Internal equipment maintenance and client service requests." />
 
-      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Open work orders" value={String(items.filter((w) => w.status !== "Completed").length + 12)} trend="+3 today" trendDir="up" />
         <KpiCard label="Due today" value="5" trend="Urgent" trendDir="down" />
         <KpiCard label="Emergency" value="2" trend="Critical" trendDir="down" />

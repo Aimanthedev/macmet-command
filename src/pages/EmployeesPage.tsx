@@ -17,7 +17,7 @@ export default function EmployeesPage() {
       <PageHeader title="Employees" subtitle="Directory, allocation, leave and compliance for Green House Technology workforce."
         actions={<button onClick={() => toast.success("Employee record created")} className="h-9 inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-3 text-sm"><Plus className="h-4 w-4" /> Add employee</button>} />
 
-      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Total employees" value="184" trend="+6 QoQ" trendDir="up" />
         <KpiCard label="On site today" value="142" trend="77% deployed" trendDir="up" />
         <KpiCard label="On leave" value="9" trend="Normal" trendDir="flat" />
@@ -51,7 +51,7 @@ export default function EmployeesPage() {
         ))}
       </div>
 
-      <Panel className="mt-6 p-5">
+      <Panel className="mt-6 p-5 overflow-x-auto">
         <SectionTitle title="Expiry alerts (next 90 days)" />
         <table className="w-full text-sm">
           <thead className="text-xs text-muted-foreground"><tr>{["Employee", "Document", "Expires"].map((h) => <th key={h} className="text-left py-2">{h}</th>)}</tr></thead>

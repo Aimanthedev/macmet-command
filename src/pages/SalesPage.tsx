@@ -25,7 +25,7 @@ export default function SalesPage() {
       <PageHeader title="Sales & CRM" subtitle="Pipeline, opportunities and client relationships."
         actions={<button onClick={() => toast.success("Opportunity draft created")} className="h-9 inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-3 text-sm"><Plus className="h-4 w-4" /> Add opportunity</button>} />
 
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Open opportunities" value={String(items.filter((o) => o.stage !== "Won" && o.stage !== "Lost").length)} trend="+3 this month" trendDir="up" />
         <KpiCard label="Pipeline value" value={fmtQAR(pipeline)} trend="+11.2%" trendDir="up" />
         <KpiCard label="Submitted quotations" value={String(items.filter((o) => o.stage === "Quotation submitted").length + 12)} trend="+2 WoW" trendDir="up" />

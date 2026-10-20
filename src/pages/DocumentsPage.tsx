@@ -21,7 +21,7 @@ export default function DocumentsPage() {
           <button onClick={() => setUpload(true)} className="h-9 inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-3 text-sm"><Plus className="h-4 w-4" /> Upload</button>
         </>} />
 
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Total documents" value="1,428" trend="+42 WoW" trendDir="up" />
         <KpiCard label="Awaiting approval" value="26" trend="Pending" trendDir="down" />
         <KpiCard label="Expiring soon" value={String(expiring + 4)} trend="Next 90 d" trendDir="down" />

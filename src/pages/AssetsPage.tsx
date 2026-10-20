@@ -18,7 +18,7 @@ export default function AssetsPage() {
     <div>
       <PageHeader title="Assets & Fleet" subtitle="Equipment, vehicles, tools and IT assets across sites and yards." />
 
-      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Total assets" value={String(assets.length + 32)} trend="+3 MoM" trendDir="up" />
         <KpiCard label="In use" value={String(assets.filter((a) => a.status === "In use").length + 20)} trend="Deployed" trendDir="up" />
         <KpiCard label="Available" value={String(assets.filter((a) => a.status === "Available").length + 5)} trend="Ready" trendDir="up" />

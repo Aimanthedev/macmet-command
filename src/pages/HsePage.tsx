@@ -26,7 +26,7 @@ export default function HsePage() {
           <button onClick={() => toast.info("Inspection scheduled")} className="h-9 rounded-lg bg-primary text-primary-foreground px-3 text-sm">Schedule inspection</button>
         </>} />
 
-      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Safe working days" value="214" trend="Best run" trendDir="up" />
         <KpiCard label="Open observations" value={String(observations.filter((o) => o.status !== "Closed").length)} trend="Action needed" trendDir="down" />
         <KpiCard label="Inspections (30d)" value="42" trend="+6 MoM" trendDir="up" />
@@ -68,7 +68,7 @@ export default function HsePage() {
           </div>
         </Panel>
 
-        <Panel className="col-span-12 xl:col-span-8 overflow-hidden">
+        <Panel className="col-span-12 xl:col-span-8 overflow-x-auto">
           <div className="p-4 border-b border-border"><SectionTitle title="HSE observations" /></div>
           <table className="w-full text-sm">
             <thead className="text-xs text-muted-foreground bg-muted/40"><tr>{["ID", "Project", "Category", "Severity", "Owner", "Due", "Status"].map((h) => <th key={h} className="text-left px-4 py-3 font-medium">{h}</th>)}</tr></thead>
