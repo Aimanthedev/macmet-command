@@ -41,7 +41,7 @@ export default function ReportsPage() {
 
       <Panel className="p-5">
         <SectionTitle title="Report builder" />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 text-sm">
           <label className="flex flex-col gap-1"><span className="text-xs text-muted-foreground">Report type</span>
             <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className="h-9 rounded-lg border border-border bg-background px-3">{reportTemplates.map((r) => <option key={r.id}>{r.name}</option>)}</select>
           </label>
@@ -50,8 +50,8 @@ export default function ReportsPage() {
           <label className="flex flex-col gap-1"><span className="text-xs text-muted-foreground">Grouping</span>
             <select value={form.grouping} onChange={(e) => setForm({ ...form, grouping: e.target.value })} className="h-9 rounded-lg border border-border bg-background px-3">{["Project", "Client", "Department", "Discipline"].map((x) => <option key={x}>{x}</option>)}</select>
           </label>
-          <label className="flex items-center gap-2 col-span-2"><input type="checkbox" checked={form.includeCharts} onChange={(e) => setForm({ ...form, includeCharts: e.target.checked })} /><span className="text-xs">Include charts</span></label>
-          <label className="flex items-center gap-2 col-span-2"><input type="checkbox" checked={form.includeDetails} onChange={(e) => setForm({ ...form, includeDetails: e.target.checked })} /><span className="text-xs">Include line-item details</span></label>
+          <label className="flex items-center gap-2 sm:col-span-2"><input type="checkbox" checked={form.includeCharts} onChange={(e) => setForm({ ...form, includeCharts: e.target.checked })} /><span className="text-xs">Include charts</span></label>
+          <label className="flex items-center gap-2 sm:col-span-2"><input type="checkbox" checked={form.includeDetails} onChange={(e) => setForm({ ...form, includeDetails: e.target.checked })} /><span className="text-xs">Include line-item details</span></label>
         </div>
         <div className="mt-4 flex justify-end gap-2">
           <button onClick={() => exportCSV(form.type)} className="h-9 rounded-lg border border-border px-3 text-sm inline-flex items-center gap-2"><Download className="h-4 w-4" /> Export CSV</button>
@@ -59,7 +59,7 @@ export default function ReportsPage() {
         </div>
 
         {preview && (
-          <div className="mt-6 p-6 rounded-xl border border-border bg-muted/20 print:bg-white print:text-black">
+          <div className="mt-6 p-6 overflow-x-auto rounded-xl border border-border bg-muted/20 print:bg-white print:text-black">
             <div className="border-b border-border pb-4 mb-4"><div className="text-xs text-muted-foreground">GREEN HOUSE TECHNOLOGY · Report preview</div><div className="font-display text-xl font-bold">{form.type}</div><div className="text-xs">{form.from} → {form.to} · Grouped by {form.grouping}</div></div>
             <table className="w-full text-sm">
               <thead className="text-xs text-muted-foreground"><tr><th className="text-left py-2">Project</th><th className="text-left">Client</th><th className="text-right">Value</th><th className="text-right">Progress</th></tr></thead>

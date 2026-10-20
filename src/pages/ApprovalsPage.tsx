@@ -31,7 +31,7 @@ export default function ApprovalsPage() {
     <div>
       <PageHeader title="Tasks & Approvals" subtitle="Personal work queue — tasks assigned to you and items awaiting your approval." />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Due today" value={String(kpi.dueToday)} trend="Focus" trendDir="down" />
         <KpiCard label="Overdue" value={String(kpi.overdue)} trend="Escalate" trendDir="down" />
         <KpiCard label="Awaiting approval" value={String(kpi.pending)} trend="Action needed" trendDir="up" />

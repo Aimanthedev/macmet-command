@@ -18,6 +18,8 @@ export default function SettingsPage() {
   });
 
   const confirmAndDo = (msg: string, cb: () => void) => { if (window.confirm(msg)) cb(); };
+  const resetData = () => { Object.keys(localStorage).filter(k => k === "ght_projects" || k.startsWith("ght_workspace_")).forEach(k => localStorage.removeItem(k)); location.reload(); };
+  const clearPreferences = () => { Object.keys(localStorage).filter(k => k.startsWith("mak_")).forEach(k => localStorage.removeItem(k)); location.reload(); };
 
   return (
     <div>
@@ -90,10 +92,10 @@ export default function SettingsPage() {
         <Panel className="col-span-12 xl:col-span-6 p-5">
           <SectionTitle title="Demo data controls" />
           <div className="grid grid-cols-2 gap-2">
-            <button onClick={() => confirmAndDo("Reset demo data to baseline?", () => { localStorage.clear(); location.reload(); })} className="rounded-lg border border-border p-3 text-sm hover:bg-accent text-left">Reset demo data</button>
+            <button onClick={() => confirmAndDo("Reset demo data to baseline?", resetData)} className="rounded-lg border border-border p-3 text-sm hover:bg-accent text-left">Reset demo data</button>
             <button onClick={() => toast.success("Optimistic scenario loaded")} className="rounded-lg border border-border p-3 text-sm hover:bg-accent text-left">Load optimistic scenario</button>
             <button onClick={() => toast.warning("Risk scenario loaded")} className="rounded-lg border border-border p-3 text-sm hover:bg-accent text-left">Load risk scenario</button>
-            <button onClick={() => confirmAndDo("Clear saved preferences?", () => { localStorage.clear(); location.reload(); })} className="rounded-lg border border-border p-3 text-sm hover:bg-accent text-left">Clear preferences</button>
+            <button onClick={() => confirmAndDo("Clear saved preferences?", clearPreferences)} className="rounded-lg border border-border p-3 text-sm hover:bg-accent text-left">Clear preferences</button>
           </div>
         </Panel>
 

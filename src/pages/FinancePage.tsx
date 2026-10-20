@@ -22,7 +22,7 @@ export default function FinancePage() {
       <PageHeader title="Finance" subtitle="Executive view of revenue, receivables and project profitability."
         actions={<button onClick={() => toCSV(list as any, "invoices.csv")} className="h-9 inline-flex items-center gap-2 rounded-lg border border-border px-3 text-sm"><Download className="h-4 w-4" /> Export invoices</button>} />
 
-      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Revenue this month" value={fmtQAR(revenueMonth)} trend="+12.6%" trendDir="up" />
         <KpiCard label="Expenses this month" value="QAR 4.72M" trend="+9.1%" trendDir="down" />
         <KpiCard label="Gross margin" value="26.5%" trend="+1.8 pts" trendDir="up" />

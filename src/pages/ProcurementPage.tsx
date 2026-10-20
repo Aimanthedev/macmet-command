@@ -14,7 +14,7 @@ export default function ProcurementPage() {
       <PageHeader title="Procurement" subtitle="Requests, purchase orders, suppliers and material deliveries."
         actions={<button onClick={() => toast.success("Purchase request drafted")} className="h-9 inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-3 text-sm"><Plus className="h-4 w-4" /> New request</button>} />
 
-      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
+      <div className="kpi-grid gap-3 mb-6">
         <KpiCard label="Open PRs" value={String(prs.length)} trend="+2 today" trendDir="up" />
         <KpiCard label="POs this month" value={String(purchaseOrders.length + 5)} trend="+3 WoW" trendDir="up" />
         <KpiCard label="Pending approvals" value="4" trend="Action needed" trendDir="down" />
@@ -36,7 +36,7 @@ export default function ProcurementPage() {
       </Panel>
 
       <div className="grid grid-cols-12 gap-4">
-        <Panel className="col-span-12 xl:col-span-6 overflow-hidden">
+        <Panel className="col-span-12 xl:col-span-6 overflow-x-auto">
           <div className="p-4 border-b border-border"><SectionTitle title="Purchase requests" /></div>
           <table className="w-full text-sm">
             <thead className="text-xs text-muted-foreground bg-muted/40"><tr>{["PR", "Project", "Category", "Value", "Priority", "Status"].map((h) => <th key={h} className="text-left px-3 py-2 font-medium">{h}</th>)}</tr></thead>
@@ -46,7 +46,7 @@ export default function ProcurementPage() {
           </table>
         </Panel>
 
-        <Panel className="col-span-12 xl:col-span-6 overflow-hidden">
+        <Panel className="col-span-12 xl:col-span-6 overflow-x-auto">
           <div className="p-4 border-b border-border"><SectionTitle title="Purchase orders" /></div>
           <table className="w-full text-sm">
             <thead className="text-xs text-muted-foreground bg-muted/40"><tr>{["PO", "Supplier", "Value", "Delivery", "Status"].map((h) => <th key={h} className="text-left px-3 py-2 font-medium">{h}</th>)}</tr></thead>
@@ -79,7 +79,7 @@ export default function ProcurementPage() {
 
         <Panel className="col-span-12 p-5">
           <SectionTitle title="Material delivery tracker" />
-          <div className="grid grid-cols-5 gap-2 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-xs">
             {["Ordered", "Dispatched", "Customs", "Delivered", "Inspected"].map((s, i) => (
               <div key={s} className="rounded-lg border border-border p-3 text-center">
                 <div className="font-medium">{s}</div>
