@@ -18,7 +18,8 @@
     "isolatedModules": true,
     "allowImportingTsExtensions": false,
     "types": [
-      "node"
+      "node",
+      "bun"
     ],
     "paths": {
       "@/*": [
