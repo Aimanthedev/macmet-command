@@ -3,4 +3,4 @@
 - [x] Add local demo sign-in, session persistence, transition and logout.
 - [x] Expand project portfolio, forms and persisted records.
 - [x] Add detailed schedule, BOQ, site, resources, materials, subcontractor, engineering, quality/HSE, billing, risks and closeout workflows.
-- [ ] Verify calculations, persistence, navigation and desktop/mobile layouts.
+- [x] Verify calculations, persistence, navigation and desktop/mobile layouts.
